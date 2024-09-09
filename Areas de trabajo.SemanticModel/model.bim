@@ -1,0 +1,1826 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.132.1053.0 (24.08)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"De DirectQuery a AS: Purview Hub\",\"Tabla\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "es-MX",
+    "cultures": [
+      {
+        "name": "es-MX",
+        "linguisticMetadata": {
+          "content": {
+            "Entities": {
+              "table_measures.access_count": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "_Measures",
+                    "ConceptualProperty": "Access Count"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Vistas": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              }
+            },
+            "Language": "en-US",
+            "Version": "2.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "De DirectQuery a AS: Purview Hub",
+        "annotations": [
+          {
+            "name": "PBI_IncludeFutureArtifacts",
+            "value": "True"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = AnalysisServices.Database(\"powerbi://api.powerbi.com/v1.0/myorg/Admin%20monitoring\", \"Purview Hub\"),",
+          "    Cubes = Table.Combine(Source[Data]),",
+          "    Cube = Cubes{[Id=\"Model\", Kind=\"Cube\"]}[Data]",
+          "in",
+          "    Cube"
+        ],
+        "kind": "m",
+        "lineageTag": "6dc5af00-0563-44ae-9862-abf298c02888"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "74bb758d-ee70-4a20-9727-d3cf3309d13e",
+        "fromColumn": "Workspace Id",
+        "fromTable": "Fabric Items",
+        "toColumn": "Workspace Id",
+        "toTable": "Workspace"
+      },
+      {
+        "name": "6324ba25-2f08-4e42-9ea2-b8a856c30fa1",
+        "fromColumn": "Created by user Id",
+        "fromTable": "Fabric Items",
+        "toColumn": "User Id",
+        "toTable": "User"
+      },
+      {
+        "name": "2c7e5bb0-ff27-43db-abaa-6843d65b18cb",
+        "fromColumn": "CapacityKeyIndex",
+        "fromTable": "Workspace",
+        "toColumn": "CapacityKeyIndex",
+        "toTable": "Capacity"
+      },
+      {
+        "name": "41687976-078f-4da6-9db2-8904d16a03c0",
+        "fromColumn": "DomainKeyIndex",
+        "fromTable": "Workspace",
+        "toColumn": "DomainKeyIndex",
+        "toTable": "Domain"
+      }
+    ],
+    "sourceQueryCulture": "es-MX",
+    "tables": [
+      {
+        "name": "Fabric Items",
+        "columns": [
+          {
+            "name": "Item name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "237ef269-17a1-473f-9996-2245982843a2",
+            "sourceColumn": "Item name",
+            "sourceLineageTag": "2b9d34b6-ec50-4fd0-bfe1-9099332383e4",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Created by user Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "84feb4fb-9c05-457f-8a13-54e94e394cf8",
+            "sourceColumn": "Created by user Id",
+            "sourceLineageTag": "d2e73dd8-4333-40df-849c-d107953d91bd",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Modified by user Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "ad5887aa-4e5f-4118-b425-1fd9932d5c19",
+            "sourceColumn": "Modified by user Id",
+            "sourceLineageTag": "2c7975b1-99e4-4442-b3de-1dc69656213b",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Item Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "d4d10e24-abde-43a8-a129-f084d0c16f52",
+            "sourceColumn": "Item Id",
+            "sourceLineageTag": "fe207ace-e018-464a-953c-a55241850e68",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Endorsement",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "11931eb6-15a3-4628-8460-3a01b7404bfb",
+            "sourceColumn": "Endorsement",
+            "sourceLineageTag": "b158eaad-4938-4959-9b6d-b1bd139f609a",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Direct access count",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "be9a8f85-8202-483a-9934-23d9780e41bf",
+            "sourceColumn": "Direct access count",
+            "sourceLineageTag": "6d56b5e2-f9b8-49a2-b4c1-621617f99991",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Group access count",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ab6af2c4-9e6f-47e9-9e62-c8a8980222d8",
+            "sourceColumn": "Group access count",
+            "sourceLineageTag": "00c5f8e2-f4c8-48ec-9cb5-b3f15793d636",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Item type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "27921793-3553-4c66-8d0e-8ad7aaf6c520",
+            "sourceColumn": "Item type",
+            "sourceLineageTag": "1809da15-9e23-491e-8964-59be0d494cc3",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Workspace Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "6188a3bd-22e9-4b68-9f2f-930fc8fd8886",
+            "sourceColumn": "Workspace Id",
+            "sourceLineageTag": "fc166347-4a21-4a32-9087-d26371cc6a37",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Access count bins",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "60b917d7-8694-481b-95f7-b11ea864af25",
+            "sourceColumn": "Access count bins",
+            "sourceLineageTag": "8ff6c44e-9c69-4e67-b620-97dd8cf4029a",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Item sub type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "bde71d71-04f6-43cb-81ba-dfd564c3d9d4",
+            "sourceColumn": "Item sub type",
+            "sourceLineageTag": "2d86116e-521e-4d17-872d-8a86246c10bd",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IndexKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "9b5e0b05-549c-4fbe-aae2-e0997194d722",
+            "sourceColumn": "IndexKey",
+            "sourceLineageTag": "fa79b2b0-33ac-4550-8630-eca10635f557",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "MIP label Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "17d930b3-d842-4dc2-b38e-ecaf56e0b5b8",
+            "sourceColumn": "MIP label Id",
+            "sourceLineageTag": "24705587-3298-4a71-86df-3625b2548ece",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LastUpdateTimestamp",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "dd135e14-4ede-4104-91b4-cf207c1007f6",
+            "sourceColumn": "LastUpdateTimestamp",
+            "sourceLineageTag": "8c83ba00-31f7-421c-8eeb-0edff226844d",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DaysSinceLastUpdated",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "414fa330-a7c0-4c2b-94cc-15ec4dc220c4",
+            "sourceColumn": "DaysSinceLastUpdated",
+            "sourceLineageTag": "76b6d9b0-7142-4f66-b36c-6410b5aea9a9",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Label name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "ff171758-48d7-4c81-a4b4-1c2c68fb7d16",
+            "sourceColumn": "Label name",
+            "sourceLineageTag": "2b2e32a3-de23-4418-a7ea-2d028f05abd7",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Usuario",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "expression": "LOOKUPVALUE(User[User name],User[User Id],'Fabric Items'[Created by user Id])",
+            "isDataTypeInferred": true,
+            "lineageTag": "7ec5f1ae-a123-4761-a5d0-ddf70106efb0",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "6dadf923-caa0-4f63-8267-b9c8495f7cce",
+        "partitions": [
+          {
+            "name": "Fabric Items",
+            "mode": "directQuery",
+            "source": {
+              "entityName": "Fabric Items",
+              "expressionSource": "De DirectQuery a AS: Purview Hub",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "42d16f03-ee24-431a-88f6-c858d8142751"
+      },
+      {
+        "name": "Workspace",
+        "columns": [
+          {
+            "name": "Workspace name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "4ca9a0c5-78ea-454d-ad9a-dc0c7f2ad2ff",
+            "sourceColumn": "Workspace name",
+            "sourceLineageTag": "c38998ab-3db2-47a5-b1b4-24fa18107d8a",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Workspace Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "4611d59d-05dc-4229-80bf-7bea8a0b0a5b",
+            "sourceColumn": "Workspace Id",
+            "sourceLineageTag": "66f2edf0-bba4-4c0d-802c-f4aaba5adfc9",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "WorkspaceKeyIndex",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "28ae1815-0d95-47f6-8eef-75b43d86d63e",
+            "sourceColumn": "WorkspaceKeyIndex",
+            "sourceLineageTag": "ea6a3d75-61af-4efe-a62b-4d4dde032c2f",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Capacity Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "5423ba70-8ab4-4a08-a1d9-4a3903db9572",
+            "sourceColumn": "Capacity Id",
+            "sourceLineageTag": "cf91ab41-a21f-42b4-948c-a4b68d35d6a4",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Workspace type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "93d97745-3f90-4dc6-b02f-bf54d1af5e29",
+            "sourceColumn": "Workspace type",
+            "sourceLineageTag": "a1c8838d-d81a-42fc-ac0e-ce221c9a9c4c",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CapacityKeyIndex",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "36f3491b-e4ce-42e2-acc4-fb20afd97e96",
+            "sourceColumn": "CapacityKeyIndex",
+            "sourceLineageTag": "db3545e7-a4ba-456c-9632-92ed554cfc5a",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DomainKeyIndex",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "f5eac221-89ae-4135-bc46-f9c5db97da74",
+            "sourceColumn": "DomainKeyIndex",
+            "sourceLineageTag": "6abc8865-0790-41c7-9ea0-b1da8399bc10",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LastUpdateTimestamp",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "9240d328-0600-44c6-8c56-a3ffa8807525",
+            "sourceColumn": "LastUpdateTimestamp",
+            "sourceLineageTag": "86470812-9b66-42b3-842d-ebbb0cdf9ccd",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DaysSinceLastUpdated",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "46173867-7fa4-4890-8fe2-42f5c671e164",
+            "sourceColumn": "DaysSinceLastUpdated",
+            "sourceLineageTag": "d179869e-129d-4c00-9ddd-25bc601c0a87",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "4e487119-75dc-46b9-be9a-3f9a11794a56",
+        "partitions": [
+          {
+            "name": "Workspace",
+            "mode": "directQuery",
+            "source": {
+              "entityName": "Workspace",
+              "expressionSource": "De DirectQuery a AS: Purview Hub",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "ca806a9f-2463-44ce-9548-6f5883ad5e25"
+      },
+      {
+        "name": "_Measures",
+        "lineageTag": "0f8ac1a4-7e83-4ade-885f-88d1aa02bef0",
+        "measures": [
+          {
+            "name": "Access Count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Access",
+            "expression": "EXTERNALMEASURE(\"Access Count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "1042a29f-74d4-45b6-a542-90d086e02007",
+            "sourceLineageTag": "f2791773-6ae5-4594-922b-e6d2f989e21d"
+          },
+          {
+            "name": "Total Workspaces",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Total Workspaces\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "0a656139-fe03-4dec-8796-84a38c178ad7",
+            "sourceLineageTag": "90cb735e-3109-4d85-aec8-b3a79a7184f6"
+          },
+          {
+            "name": "Total Direct Users",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Access",
+            "expression": "EXTERNALMEASURE(\"Total Direct Users\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "1061d109-8c08-435d-a8f9-5e6640e58a4a",
+            "sourceLineageTag": "d3c56a03-a74a-465a-b0a9-ddb020f6f8ec"
+          },
+          {
+            "name": "Total Group Users",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Access",
+            "expression": "EXTERNALMEASURE(\"Total Group Users\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "9be4c554-56e3-4e5e-a78d-6c402cc4fcb4",
+            "sourceLineageTag": "754a54ea-ef34-4861-ac1f-a1a19a503e5d"
+          },
+          {
+            "name": "Workspace Title (Drillthrough)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Items",
+            "expression": "EXTERNALMEASURE(\"Workspace Title (Drillthrough)\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "isHidden": true,
+            "lineageTag": "18a6d9c4-a504-492a-ba90-836bd15a6034",
+            "sourceLineageTag": "468a316a-a865-426e-a091-fab83ed76e1a"
+          },
+          {
+            "name": "No. of items",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Items",
+            "expression": "EXTERNALMEASURE(\"No. of items\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "a06a2e89-9930-4b1b-b948-16dbbef1b7d5",
+            "sourceLineageTag": "9da880e8-c2d1-4e7e-8380-cb85a754087b"
+          },
+          {
+            "name": "No. of endorsed items",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"No. of endorsed items\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "fec3fa67-bda8-4e07-a82b-e6eb15e9d07e",
+            "sourceLineageTag": "317488db-61d7-4731-9933-1ff8cc8698f9"
+          },
+          {
+            "name": "No. of promoted items",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"No. of promoted items\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "1741a43e-b182-4755-8ce4-3ecfe49b37a7",
+            "sourceLineageTag": "7b2b3a2c-298d-4d11-b46e-993b16259da4"
+          },
+          {
+            "name": "No. of certified items",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"No. of certified items\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "768d1a5c-233a-43fb-a9ba-f43075b39683",
+            "sourceLineageTag": "01a64c7f-538e-4623-a45a-bacc3d0307e7"
+          },
+          {
+            "name": "No. of unendorsed items",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"No. of unendorsed items\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "87b857c6-3394-40e3-ac15-38e26b93dbeb",
+            "sourceLineageTag": "b9c0e2e1-0e21-4a74-83aa-c3913616f5af"
+          },
+          {
+            "name": "Endorsed items (%)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"Endorsed items (%)\", DOUBLE, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "903bb28d-d0f0-4ae2-8568-e8a001026fc7",
+            "sourceLineageTag": "4c641fed-1a14-4dbe-9edf-be0c2333358d"
+          },
+          {
+            "name": "No. of labeled items",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"No. of labeled items\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "5310f570-6529-4b03-b720-f07c8ebe9198",
+            "sourceLineageTag": "53bddfd3-d143-47f0-8c36-4a4b8aee6a02"
+          },
+          {
+            "name": "No. of unlabeled items",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"No. of unlabeled items\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "d95dd056-8adc-4a15-9bfe-4e3e56ee21cc",
+            "sourceLineageTag": "de71e182-1a42-4719-993f-2ee652599dd7"
+          },
+          {
+            "name": "Labeled items (%)",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"Labeled items (%)\", DOUBLE, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "3fefea2f-da20-49ce-bc5a-9e3363653e4b",
+            "sourceLineageTag": "8eb395f3-c04d-4be3-86e4-68a46cb2be26"
+          },
+          {
+            "name": "Unlabeled items (%)",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"Unlabeled items (%)\", DOUBLE, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "2311b51d-1ed4-47e5-af92-8283cfe472f0",
+            "sourceLineageTag": "c285505f-794c-4d73-b3d0-4d09e4636543"
+          },
+          {
+            "name": "Most used label",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"Most used label\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "3db4a97e-3ef9-4de7-96ac-16e9a340dcc6",
+            "sourceLineageTag": "ef6c8a13-a019-4954-b0ad-dfc92e1863f6"
+          },
+          {
+            "name": "Label comp",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"Label comp\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "7d98666d-5c61-4078-8319-6f3882886e5d",
+            "sourceLineageTag": "f46e2c41-c582-46ac-a6fe-f5107a7d0b0d"
+          },
+          {
+            "name": "Most used label count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"Most used label count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "3746309c-e8fa-4a76-b41e-e567c09a1a73",
+            "sourceLineageTag": "f831e477-b1cb-49d7-a56c-c08722dfbd07"
+          },
+          {
+            "name": "Most unlabeled WS count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"Most unlabeled WS count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "b02e9eab-87a0-452e-b921-50f7ce47d409",
+            "sourceLineageTag": "598e5204-d350-4259-985c-b6c33a1f6fc5"
+          },
+          {
+            "name": "Most unlabeled WS",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"Most unlabeled WS\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "4397178a-3da4-4684-baba-c9850afd99de",
+            "sourceLineageTag": "a0b28865-1691-4f14-91ca-1a45a83f6dfb"
+          },
+          {
+            "name": "Most populated WS count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Most populated WS count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "a6b96fe9-dcf8-4091-91c6-fb5e7537e722",
+            "sourceLineageTag": "57d08a50-ce6d-4424-b6e9-95ee59432b15"
+          },
+          {
+            "name": "Most populated WS",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Most populated WS\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "ea447d4f-2e4c-4908-bb02-5af4533bd251",
+            "sourceLineageTag": "c8949863-c2fd-410a-83e1-589cbfef3beb"
+          },
+          {
+            "name": "No. of Workspace with item type",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Items",
+            "expression": "EXTERNALMEASURE(\"No. of Workspace with item type\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "4b2f882a-06aa-4e8a-a462-ed924ddd2222",
+            "sourceLineageTag": "9de425ce-5de4-4c6c-a581-2dd28c063d56"
+          },
+          {
+            "name": "Most accessed item count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Items",
+            "expression": "EXTERNALMEASURE(\"Most accessed item count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "355777b7-59cc-4b9d-b153-ac082f6d5595",
+            "sourceLineageTag": "2415b10d-de10-479a-a9a6-fab4273ee4e7"
+          },
+          {
+            "name": "Most accessed item",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Items",
+            "expression": "EXTERNALMEASURE(\"Most accessed item\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "6f330393-5f51-4bd2-8705-ce074c4e9b4d",
+            "sourceLineageTag": "c1a10ffa-fa96-46c9-9cef-e9fc8c1aa60e"
+          },
+          {
+            "name": "Most accessed Creator",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Items",
+            "expression": "EXTERNALMEASURE(\"Most accessed Creator\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "0e784fe8-25a2-498e-9723-2faeb5070892",
+            "sourceLineageTag": "4f14f9aa-b9b0-45e4-8122-5f9c7ba12ecd"
+          },
+          {
+            "name": "Most accessed Creator count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Items",
+            "expression": "EXTERNALMEASURE(\"Most accessed Creator count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "b8b3b1e0-2f23-4b99-b7b2-e63bbda5ef17",
+            "sourceLineageTag": "634ddd3d-3ee6-49cf-9d8a-d8f9af461060"
+          },
+          {
+            "name": "Most accessed Creator name",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Items",
+            "expression": "EXTERNALMEASURE(\"Most accessed Creator name\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "71d4e868-0411-40b9-a9e1-0eb839fcbdf9",
+            "sourceLineageTag": "53189e72-e6ec-4903-a4b2-24e7ab03c74d"
+          },
+          {
+            "name": "labeled items (%) with icon",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"labeled items (%) with icon\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "fa85ec03-4851-4e9e-b71b-438e3b47fd36",
+            "sourceLineageTag": "5d155d0c-b9b7-48f1-9eaa-18b969c738cc"
+          },
+          {
+            "name": "Most unlabeled item type count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"Most unlabeled item type count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "1d4b89b8-db69-45d8-92e8-6cb0d59ccb45",
+            "sourceLineageTag": "387b47f4-79ad-4101-99ae-709767980e40"
+          },
+          {
+            "name": "Most unlabeled item type",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"Most unlabeled item type\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "99ad1884-16d1-406f-8103-665e58278ed8",
+            "sourceLineageTag": "c6f0ef39-7e72-4a42-b46a-e3a83316a284"
+          },
+          {
+            "name": "labeled items (%) with binary",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Information Protection",
+            "expression": "EXTERNALMEASURE(\"labeled items (%) with binary\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "eb3bfed2-f92c-4f52-980f-f7f14f445e89",
+            "sourceLineageTag": "1ef4b390-b06b-48b0-9060-59d01604f304"
+          },
+          {
+            "name": "Access flag with binary",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Access",
+            "expression": "EXTERNALMEASURE(\"Access flag with binary\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "152f4962-fa81-474e-9500-0bdd930474d6",
+            "sourceLineageTag": "e29964d7-bb44-4aca-9f09-b0a058ecd79d"
+          },
+          {
+            "name": "Most disticnt wokspace a creator published to",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Most disticnt wokspace a creator published to\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "ff297667-39ac-4e82-8b59-938dc33e89d1",
+            "sourceLineageTag": "8fc37fcd-fd5e-4397-a97f-983f472d6d08"
+          },
+          {
+            "name": "Most disticnt wokspace a creator published to count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Most disticnt wokspace a creator published to count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "a80cd8ba-ede6-4da3-944f-475ba777375f",
+            "sourceLineageTag": "d57621ae-236c-4ee0-a246-bf14f9d5031a"
+          },
+          {
+            "name": "No. of Workspaces in domains",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"No. of Workspaces in domains\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "46c02030-f5c5-4fbc-aa75-3ffa80b6934f",
+            "sourceLineageTag": "bc303950-1ab0-453a-a8a3-abd40450a71a"
+          },
+          {
+            "name": "Workspaces in domains (%)",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Workspaces in domains (%)\", DOUBLE, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "50552a2b-88e1-4d9d-8dd9-fc2f5e2412c9",
+            "sourceLineageTag": "c47c43f4-471a-4819-adce-9955bbda4d23"
+          },
+          {
+            "name": "No. of Workspaces not in domains",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"No. of Workspaces not in domains\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "1d8d28b1-7e20-49d6-aca1-99e63c561952",
+            "sourceLineageTag": "1fa80eb8-80d4-402e-b36e-fab9a0a31f61"
+          },
+          {
+            "name": "Workspaces not in domains (%)",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Workspaces not in domains (%)\", DOUBLE, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "5c842bb7-9ad1-40d5-82c0-8d6b64d8c331",
+            "sourceLineageTag": "71049f30-489f-4c1a-9409-20d4dc0ceb44"
+          },
+          {
+            "name": "Access flag with icon",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Access",
+            "expression": "EXTERNALMEASURE(\"Access flag with icon\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "66e08e55-49fc-41f2-9065-d923fa3983e2",
+            "sourceLineageTag": "35d5740b-0222-4a98-b961-e94fbe3c96d6"
+          },
+          {
+            "name": "Access flag with action icon",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Access",
+            "expression": "EXTERNALMEASURE(\"Access flag with action icon\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "ac749011-f4e9-4dc3-97d1-7ef3f8af8f24",
+            "sourceLineageTag": "e7c8a44e-fb2c-4f6b-9774-f21460d30e35"
+          },
+          {
+            "name": "Most populated WS without domain",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Most populated WS without domain\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "dccd2eff-07cf-4c58-bbc1-c36003af6f9e",
+            "sourceLineageTag": "2faa365b-33db-48d7-88b9-20b7cd86ab19"
+          },
+          {
+            "name": "Most populated WS without domain count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Most populated WS without domain count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "debfbb2c-b2d9-43f5-94bd-51fd568b894e",
+            "sourceLineageTag": "a8269b9a-7051-4514-9b3e-eac892d5c694"
+          },
+          {
+            "name": "Most Items a creator published outside of a domains count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Most Items a creator published outside of a domains count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "64f4d5e7-11b3-4819-99bc-a4804cea19fc",
+            "sourceLineageTag": "fd8d5142-c4c9-41a9-8079-aa84b9bb1d40"
+          },
+          {
+            "name": "Most Items a creator published outside of a domains",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Workspaces & Domains",
+            "expression": "EXTERNALMEASURE(\"Most Items a creator published outside of a domains\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "2a3eb1e6-fa03-4039-a7fd-e0d749c96492",
+            "sourceLineageTag": "996c017a-bb09-4eca-8489-7031004fb586"
+          },
+          {
+            "name": "Most accessed item with endorsement",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"Most accessed item with endorsement\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "23cefd1b-9b40-40a5-a1e2-e138c44182c7",
+            "sourceLineageTag": "c4225059-bd15-4848-973c-e2ed6dfff696"
+          },
+          {
+            "name": "Workspace with most endorsed items",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"Workspace with most endorsed items\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "a45cc221-e00a-44f2-a423-765a228bfaff",
+            "sourceLineageTag": "348ea480-fca8-44fd-bbc7-a5d922ef4900"
+          },
+          {
+            "name": "Workspace with most endorsed items count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"Workspace with most endorsed items count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "39051071-7524-411a-bf86-2449e6fe9097",
+            "sourceLineageTag": "8ad8699b-fd3d-4052-9bed-d69310a937f0"
+          },
+          {
+            "name": "Creator with most endorsed items",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"Creator with most endorsed items\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "7d672648-ef8f-4ccd-b396-5f347efb9baa",
+            "sourceLineageTag": "e50730f9-dd43-4c95-832b-1cc2bd2cf015"
+          },
+          {
+            "name": "Creator with most endorsed items count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"Creator with most endorsed items count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "279c4501-ef8c-47d3-b1c5-7a64f54b4162",
+            "sourceLineageTag": "26aa3694-15fb-43d3-b665-790c8e0d6d7f"
+          },
+          {
+            "name": "Most accessed item with no endorsement",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"Most accessed item with no endorsement\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "ad72c3dd-1b78-4816-ab4a-a8431f64bfc9",
+            "sourceLineageTag": "ae42dfaf-111c-401e-a995-098585f73275"
+          },
+          {
+            "name": "Most accessed item with no endorsement count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"Most accessed item with no endorsement count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "db26d470-3e2a-48c7-b9d9-6f4543359aa1",
+            "sourceLineageTag": "4cf87057-ebdb-4d60-9174-edd724ce751c"
+          },
+          {
+            "name": "Most accessed item with endorsement count",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"Most accessed item with endorsement count\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "#,0",
+            "lineageTag": "3c458006-3a1c-4c3b-84d0-c82d6569e703",
+            "sourceLineageTag": "51ea9609-8f58-43f9-8ad2-75e3237f4db8"
+          },
+          {
+            "name": "Most accessed item with endorsement type",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isText\":true}"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"Most accessed item with endorsement type\", STRING, \"De DirectQuery a AS: Purview Hub\")",
+            "lineageTag": "78a47469-0a80-4fa8-96c7-7d0695ca66e1",
+            "sourceLineageTag": "2a8c09d5-1f83-4397-acef-e6ef2933ad8b"
+          },
+          {
+            "name": "No. of unendorsed items with view access above threshold",
+            "dataCategory": "Uncategorized",
+            "displayFolder": "Endorsement",
+            "expression": "EXTERNALMEASURE(\"No. of unendorsed items with view access above threshold\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "0",
+            "lineageTag": "2403a686-9ef8-4abf-8043-5572e07abd6c",
+            "sourceLineageTag": "e1752d08-a5d7-4395-93bc-2740baf97c8c"
+          },
+          {
+            "name": "LatestLastUpdatedTimestamp",
+            "dataCategory": "Uncategorized",
+            "expression": "EXTERNALMEASURE(\"LatestLastUpdatedTimestamp\", DATETIME, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "General Number",
+            "lineageTag": "55369008-80b2-4998-8fb1-ea7737d33e21",
+            "sourceLineageTag": "cb107164-b837-43e9-9273-5d4c1e01a027"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_Measures",
+            "mode": "directQuery",
+            "source": {
+              "entityName": "_Measures",
+              "expressionSource": "De DirectQuery a AS: Purview Hub",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "0c33c1e0-44b1-4106-ab28-8eb385c94041"
+      },
+      {
+        "name": "User",
+        "columns": [
+          {
+            "name": "Email address",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "78342c24-fc2e-4631-839a-faf5fcc5c90e",
+            "sourceColumn": "Email address",
+            "sourceLineageTag": "07da0e84-8f89-47cd-9446-4db5b339c39d",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "User (UPN)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "717d9229-8976-4c1a-a136-a9daa19830d3",
+            "sourceColumn": "User (UPN)",
+            "sourceLineageTag": "36bf6964-aa75-47bf-800d-db19c953aeb9",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "PUID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "74a456f1-1cfc-4e9e-a406-2468043f4973",
+            "sourceColumn": "PUID",
+            "sourceLineageTag": "a1fc7849-b7f5-483d-a655-37d76b1cce2c",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "UserKeyIndex",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "7e34808a-5960-4b02-be98-befcb8ba63fd",
+            "sourceColumn": "UserKeyIndex",
+            "sourceLineageTag": "64d3f866-ef16-47d7-a09a-97bd5529dffa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "User type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "fa514554-428c-43e2-9d4d-2347bb3f4795",
+            "sourceColumn": "User type",
+            "sourceLineageTag": "46a9d48f-f30c-4b22-ac5b-8baeb1b67ac6",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "User Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "7db0e90f-d037-403d-b680-3ae519451881",
+            "sourceColumn": "User Id",
+            "sourceLineageTag": "5517dc91-95b0-4274-8de1-056a2f748218",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "User name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "cae1ee0e-e653-4239-a0ba-eff9e9d8c6ee",
+            "sourceColumn": "User name",
+            "sourceLineageTag": "8ef9a749-509d-4cde-930e-ea79c909c22a",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LastUpdateTimestamp",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "28335232-a849-4707-9dc9-73f1553bbf04",
+            "sourceColumn": "LastUpdateTimestamp",
+            "sourceLineageTag": "93534fa8-e09d-481d-aeb7-72bac421f8a1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DaysSinceLastUpdated",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "04eaddc4-234f-41cc-830c-b6c7ebc5f012",
+            "sourceColumn": "DaysSinceLastUpdated",
+            "sourceLineageTag": "e9da827e-6e6f-40f2-a8ab-9ccf0ac7598c",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "651f8997-d7ff-4ad4-a435-c741f51036b8",
+        "partitions": [
+          {
+            "name": "User",
+            "mode": "directQuery",
+            "source": {
+              "entityName": "User",
+              "expressionSource": "De DirectQuery a AS: Purview Hub",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "5a0bc5dc-7728-4c06-9b43-9355361aba3b"
+      },
+      {
+        "name": "Capacity",
+        "columns": [
+          {
+            "name": "Capacity name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "bdf06531-778e-4b7d-8cdd-285d5028e7a5",
+            "sourceColumn": "Capacity name",
+            "sourceLineageTag": "841cf184-64ef-42ef-8c9b-63a7f384ba6b",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Capacity SKU",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "1abfc084-38f0-4020-bb15-ab0e7d352d02",
+            "sourceColumn": "Capacity SKU",
+            "sourceLineageTag": "3c72777b-728d-4afd-91d6-6d22ad7a2a26",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Capacity Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "3dbc5f88-0ee6-404d-9255-e1686a5581fb",
+            "sourceColumn": "Capacity Id",
+            "sourceLineageTag": "10ffaa10-156e-4e07-8bc1-51a07dab7c8c",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CapacityKeyIndex",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "45c92dc3-7a76-48df-837f-250afdc607a4",
+            "sourceColumn": "CapacityKeyIndex",
+            "sourceLineageTag": "576ffa2d-38ec-4d7d-8625-6b2c4b59810b",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "0f1abbc3-9c11-480d-a264-fd7abdc8e27e",
+        "partitions": [
+          {
+            "name": "Capacity",
+            "mode": "directQuery",
+            "source": {
+              "entityName": "Capacity",
+              "expressionSource": "De DirectQuery a AS: Purview Hub",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "7e92d018-bce5-4ae8-af96-a008f8636ac7"
+      },
+      {
+        "name": "Set label coverage goal",
+        "columns": [
+          {
+            "name": "Parameter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "27ae72f7-5378-45ab-bc21-00dfd7f78452",
+            "sourceColumn": "Parameter",
+            "sourceLineageTag": "9f926538-0ad4-4407-80a5-31c9baf1a508",
+            "summarizeBy": "none"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "13fd3623-f965-4e0e-a84d-ae873f0cfb4d",
+        "measures": [
+          {
+            "name": "Parameter Value",
+            "dataCategory": "Uncategorized",
+            "expression": "EXTERNALMEASURE(\"Parameter Value\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "d4eaf1a7-4189-4496-ba85-b0a0e469fe94",
+            "sourceLineageTag": "153a3a0e-2523-4cd3-8fb5-4665833ceaaf"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Set label coverage goal",
+            "mode": "directQuery",
+            "source": {
+              "entityName": "Set label coverage goal",
+              "expressionSource": "De DirectQuery a AS: Purview Hub",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "f3d7bd14-28c6-482e-be88-0d2dc774d205"
+      },
+      {
+        "name": "Domain",
+        "columns": [
+          {
+            "name": "Domain name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "a4640287-77f3-49fa-99ec-cf2278a312fe",
+            "sourceColumn": "Domain name",
+            "sourceLineageTag": "0403e89b-84f2-4b63-b5de-bdd86e504786",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Domain Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "lineageTag": "fb0dec73-44f3-4389-b318-7a18a4914092",
+            "sourceColumn": "Domain Id",
+            "sourceLineageTag": "214b38a4-786d-41bd-b8c9-b1d3c57d9c2b",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DomainKeyIndex",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "8f24609a-8a3e-4088-af15-df849f2c5bde",
+            "sourceColumn": "DomainKeyIndex",
+            "sourceLineageTag": "98b8b079-c4c8-4746-a18f-0fcc9dd58bfb",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ParentDomainKeyIndex",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "9280816f-0414-4d06-bd7e-91cb08ec5d8f",
+            "sourceColumn": "ParentDomainKeyIndex",
+            "sourceLineageTag": "62d0e871-6bc0-461e-ac42-7a0b5ebf6271",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Path",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "f21fdcba-633f-447a-9694-a211e6983e5d",
+            "sourceColumn": "Path",
+            "sourceLineageTag": "a8913c83-26f3-432e-bc88-2e043bd69e61",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Parent domain name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "1baef2b8-311b-461f-b8d6-f3c4b250fc54",
+            "sourceColumn": "Parent domain name",
+            "sourceLineageTag": "5b80282c-6cac-4861-a9a5-a90c33e8eb93",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Subdomain name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "933d9a7c-5678-4502-ad6b-740c3daa08e7",
+            "sourceColumn": "Subdomain name",
+            "sourceLineageTag": "e07b5954-bfdc-41ac-9efc-263b88d59b2a",
+            "summarizeBy": "none"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Domain Hierarchy",
+            "levels": [
+              {
+                "name": "Parent domain",
+                "column": "Parent domain name",
+                "lineageTag": "a144c85b-938a-429f-897a-e5965f0a2fd3",
+                "ordinal": 0,
+                "sourceLineageTag": "cee55cbd-7dbd-4157-b328-716970c76061"
+              },
+              {
+                "name": "Subdomain",
+                "column": "Subdomain name",
+                "lineageTag": "16f0dac7-9410-49fc-a206-3e073123adff",
+                "ordinal": 1,
+                "sourceLineageTag": "2c12ab77-3d44-4826-962c-92e72b07d918"
+              }
+            ],
+            "lineageTag": "7d31b0d5-de2b-4ec5-a013-cd86ad9d673f",
+            "sourceLineageTag": "2dcb7a91-4c37-4474-80b5-de4d16ac9c3e"
+          }
+        ],
+        "lineageTag": "af68564a-1eed-425f-9d68-1879f31a26aa",
+        "partitions": [
+          {
+            "name": "Domain",
+            "mode": "directQuery",
+            "source": {
+              "entityName": "Domain",
+              "expressionSource": "De DirectQuery a AS: Purview Hub",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "9777811b-3dbf-479c-b4f0-ee82f4c14eb4"
+      },
+      {
+        "name": "Filter by dimension",
+        "columns": [
+          {
+            "name": "Investigation path",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "93fd9f70-913d-4bf4-873b-95430982b424",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Parameter Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Parameter Order",
+            "sourceColumn": "Investigation path",
+            "sourceLineageTag": "5165b800-f59d-4391-a691-6baaaa0894c2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Parameter Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "d149ae5c-f617-42b1-8eb9-6bdb9edfd0bf",
+            "sortByColumn": "Parameter Order",
+            "sourceColumn": "Parameter Fields",
+            "sourceLineageTag": "ae1404a5-6886-4cd0-9a58-34d4d0dd16a6",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Parameter Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "286c6dc7-4bd9-4b3f-8709-5ab0fd3563ee",
+            "sourceColumn": "Parameter Order",
+            "sourceLineageTag": "d155ab73-6a48-43de-b86a-d8a5e85ea1a8",
+            "summarizeBy": "sum"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "0b9292d7-778b-4f67-b717-f3ff57f42b51",
+        "partitions": [
+          {
+            "name": "Filter by dimension",
+            "mode": "directQuery",
+            "source": {
+              "entityName": "Filter by dimension",
+              "expressionSource": "De DirectQuery a AS: Purview Hub",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "d65d6629-e5d4-484d-98c6-c26632b1a684"
+      },
+      {
+        "name": "Access limit to promote endorsement",
+        "columns": [
+          {
+            "name": "Parameter2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "Uncategorized",
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "f8379a28-7447-483f-a393-b1469d4e49a4",
+            "sourceColumn": "Parameter2",
+            "sourceLineageTag": "9812a530-74d0-4286-b110-c075ff88ad67",
+            "summarizeBy": "none"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "cd249a2a-2e64-4323-8d5c-69a7b9e5221b",
+        "measures": [
+          {
+            "name": "Access parameter",
+            "dataCategory": "Uncategorized",
+            "expression": "EXTERNALMEASURE(\"Access parameter\", INTEGER, \"De DirectQuery a AS: Purview Hub\")",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "689d1e43-138b-467c-b0ee-9f49f4a7e03c",
+            "sourceLineageTag": "1fc78070-bb39-4f69-b7df-8ac4ced4562f"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Access limit to promote endorsement",
+            "mode": "directQuery",
+            "source": {
+              "entityName": "Access limit to promote endorsement",
+              "expressionSource": "De DirectQuery a AS: Purview Hub",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "5f9fae49-c532-4d57-8922-9a4416bb929b"
+      },
+      {
+        "name": "Tabla",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b51ab5c8-2143-4fc3-8d36-d1d7f53bdbb1",
+            "sourceColumn": "1",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "65053524-6f52-4876-8262-d76f617264e3",
+        "partitions": [
+          {
+            "name": "Tabla",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WMlSKjQUA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"1\" = _t]),",
+                "    #\"Tipo cambiado\" = Table.TransformColumnTypes(Origen,{{\"1\", Int64.Type}})",
+                "in",
+                "    #\"Tipo cambiado\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
